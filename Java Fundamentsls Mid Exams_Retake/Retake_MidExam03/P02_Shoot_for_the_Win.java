@@ -1,4 +1,4 @@
-package MidExam03;
+package Retake_MidExam03;
 
 import java.util.Arrays;
 import java.util.Scanner;
