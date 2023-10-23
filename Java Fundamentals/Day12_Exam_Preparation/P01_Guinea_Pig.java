@@ -1,4 +1,4 @@
-package MidExam04;
+package Day12_Exam_Preparation;
 
 import java.util.Scanner;
 

@@ -17,14 +17,10 @@ public class P01_SoftUni_Reception {
         int hoursCounter = 0;
         int brakeHoursCounter = 0;
 
-        for (int i = 1; true; i++) {
-            if(studentsCount <= 0){
-                break;
-            } else {
-                studentsCount -= employeeTotalServe;
-                hoursCounter++;
-            }
-            if(studentsCount > 0 && hoursCounter % 3 == 0){
+        while (studentsCount > 0) {
+            studentsCount -= employeeTotalServe;
+            hoursCounter++;
+            if (studentsCount > 0 && hoursCounter % 3 == 0) {
                 brakeHoursCounter++;
             }
         }
