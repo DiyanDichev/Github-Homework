@@ -46,7 +46,6 @@ public class P03_Need_For_Speed_3 {
                     break;
                 case "Refuel":
                     int refuelFuel = Integer.parseInt(carsList[2]);
-                    // nqma proverka ako ve4e ima 75 litra
                     boolean flag = true;
                     for (int i = 1; i <= refuelFuel; i++) {
                         if (carsData.get(car).get(1) >= 75) {
