@@ -1,4 +1,4 @@
-package ME3_Arrays_More_Exercise;
+package More_Exercise.ME3_Arrays_More_Exercise;
 
 
 import java.util.Arrays;

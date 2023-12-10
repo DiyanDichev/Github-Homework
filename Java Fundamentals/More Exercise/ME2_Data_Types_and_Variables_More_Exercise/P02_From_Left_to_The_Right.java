@@ -1,2 +1,2 @@
-package ME2_Data_Types_and_Variables_More_Exercise;public class P02_From_Left_to_The_Right {
+package More_Exercise.ME2_Data_Types_and_Variables_More_Exercise;public class P02_From_Left_to_The_Right {
 }

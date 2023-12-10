@@ -1,4 +1,4 @@
-package ME2_Data_Types_and_Variables_More_Exercise;
+package More_Exercise.ME2_Data_Types_and_Variables_More_Exercise;
 
 import java.util.Scanner;
 

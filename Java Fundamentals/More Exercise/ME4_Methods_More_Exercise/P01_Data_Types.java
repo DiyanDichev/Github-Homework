@@ -1,4 +1,4 @@
-package ME4_Methods_More_Exercise;
+package More_Exercise.ME4_Methods_More_Exercise;
 
 import java.util.Scanner;
 
