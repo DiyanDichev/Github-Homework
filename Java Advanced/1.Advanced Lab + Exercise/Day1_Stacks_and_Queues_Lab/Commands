@@ -1,0 +1,18 @@
+
+
+
+                    STACK
+
+Stack - LIFO - Last in First out
+push(element) - insert element on the top of the stack
+pop() - remove topmost element
+peek() - get topmost element
+
+
+
+                    QUEUE
+
+Queue - FIFO - First in First out
+offer(element) - insert element at the start of the queue
+poll() - remove first element of the queue
+peek() - get first element of the queue
