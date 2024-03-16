@@ -1,4 +1,4 @@
-package P03RandomArrayList;
+package Day05_Inheritance.P03RandomArrayList;
 
 
 import java.util.ArrayList;
