@@ -1,6 +1,6 @@
 package Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.interfaces;
 
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._4InterfacesAndAbstraction._2Exersices._06MilitaryElite.enums.Corps;
+import Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.enums.Corps;
 
 public interface SpecialisedSoldier extends Private {
     Corps getCorp();

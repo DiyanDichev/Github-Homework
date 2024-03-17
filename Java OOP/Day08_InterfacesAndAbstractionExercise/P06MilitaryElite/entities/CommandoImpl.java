@@ -1,5 +1,6 @@
 package Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.entities;
 
+
 import Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.interfaces.Commando;
 import Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.interfaces.Mission;
 

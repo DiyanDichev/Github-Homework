@@ -1,6 +1,6 @@
 package Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.entities;
 
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._4InterfacesAndAbstraction._2Exersices._06MilitaryElite.enums.Status;
+import Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.enums.Status;
 import Day08_InterfacesAndAbstractionExercise.P06MilitaryElite.interfaces.Mission;
 
 public class MissionImpl implements Mission {
