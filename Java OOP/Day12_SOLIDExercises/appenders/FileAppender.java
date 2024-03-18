@@ -1,8 +1,8 @@
 package Day12_SOLIDExercises.appenders;
 
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.enums.LogLevel;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.layouts.Layout;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.utilites.File;
+import Day12_SOLIDExercises.enums.LogLevel;
+import Day12_SOLIDExercises.layouts.Layout;
+import Day12_SOLIDExercises.utilites.File;
 
 public class FileAppender extends BaseAppender {
     private File file;

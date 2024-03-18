@@ -1,16 +1,16 @@
 package Day12_SOLIDExercises;
 
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.appenders.Appender;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.appenders.ConsoleAppender;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.appenders.FileAppender;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.appenders.XmlAppender;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.enums.LogLevel;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.layouts.Layout;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.layouts.SimpleLayout;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.layouts.XmlLayout;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.loggers.Logger;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.loggers.MessageLogger;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.utilites.LogFile;
+import Day12_SOLIDExercises.appenders.Appender;
+import Day12_SOLIDExercises.appenders.ConsoleAppender;
+import Day12_SOLIDExercises.appenders.FileAppender;
+import Day12_SOLIDExercises.appenders.XmlAppender;
+import Day12_SOLIDExercises.enums.LogLevel;
+import Day12_SOLIDExercises.layouts.Layout;
+import Day12_SOLIDExercises.layouts.SimpleLayout;
+import Day12_SOLIDExercises.layouts.XmlLayout;
+import Day12_SOLIDExercises.loggers.Logger;
+import Day12_SOLIDExercises.loggers.MessageLogger;
+import Day12_SOLIDExercises.utilites.LogFile;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

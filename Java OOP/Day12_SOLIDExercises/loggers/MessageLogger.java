@@ -2,7 +2,7 @@ package Day12_SOLIDExercises.loggers;
 
 import Day12_SOLIDExercises.appenders.Appender;
 import Day12_SOLIDExercises.appenders.FileAppender;
-import _4ProgrammingJavaOOPFebruary2024._1JavaOOP._6SOLID._2Exercises._Loggers.enums.LogLevel;
+import Day12_SOLIDExercises.enums.LogLevel;
 
 import java.util.Map;
 
