@@ -1,4 +1,4 @@
-package P04_BubbleSortTest;
+package Day16_UnitTestingExercise.P04_BubbleSortTest;
 
 import org.junit.Assert;
 import org.junit.Test;

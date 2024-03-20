@@ -1,4 +1,4 @@
-package P06_TirePressureMonitoringSystem;
+package Day16_UnitTestingExercise.P06_TirePressureMonitoringSystem;
 
 import org.junit.Assert;
 import org.junit.Test;

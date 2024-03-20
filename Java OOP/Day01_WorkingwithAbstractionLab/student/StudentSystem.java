@@ -21,7 +21,7 @@ public class StudentSystem {
         } else if (commandParts[0].equals("Show")) {
             String name = commandParts[1];
             if (students.containsKey(name)) {
-                var student = students.get(name);
+                Student student = students.get(name);
                 String view = String.format("%s is %s years old.", student.getName(), student.getAge());
 
                 if (student.getGrade() >= 5.00) {

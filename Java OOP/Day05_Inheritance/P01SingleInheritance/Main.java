@@ -1,4 +1,4 @@
-package P01SingleInheritance;
+package Day05_Inheritance.P01SingleInheritance;
 
 
 public class Main {

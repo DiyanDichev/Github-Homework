@@ -1,4 +1,4 @@
-package p03_IteratorTest;
+package Day16_UnitTestingExercise.P03_IteratorTest;
 
 
 import org.junit.Assert;

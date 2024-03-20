@@ -1,5 +1,6 @@
-package P01_Database;
+package Day16_UnitTestingExercise.P01_Database;
 
+import Day16_UnitTestingExercise.p01_Database.Database;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

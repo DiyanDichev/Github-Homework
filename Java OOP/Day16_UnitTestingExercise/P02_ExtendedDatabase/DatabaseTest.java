@@ -1,4 +1,4 @@
-package P02_ExtendedDatabase;
+package Day16_UnitTestingExercise.P02_ExtendedDatabase;
 
 import org.junit.Assert;
 import org.junit.Before;
