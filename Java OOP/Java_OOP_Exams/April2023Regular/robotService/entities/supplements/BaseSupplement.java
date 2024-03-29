@@ -1,0 +1,21 @@
+package Java_OOP_Exams.April2023Regular.robotService.entities.supplements;
+
+public abstract class BaseSupplement implements Supplement{
+    private int hardness;
+    private double price;
+
+    public BaseSupplement(int hardness, double price) {
+        this.hardness = hardness;
+        this.price = price;
+    }
+
+    public int getHardness() {
+        return this.hardness;
+    }
+
+    @Override
+    public double getPrice() {
+        return this.price;
+    }
+
+}
