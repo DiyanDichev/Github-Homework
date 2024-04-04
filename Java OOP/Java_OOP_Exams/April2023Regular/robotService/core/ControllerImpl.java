@@ -1,23 +1,23 @@
 package Java_OOP_Exams.April2023Regular.robotService.core;
 
-import Java_OOP_Exams.April2023Regular.robotService.common.ConstantMessages;
-import Java_OOP_Exams.April2023Regular.robotService.common.ExceptionMessages;
-import Java_OOP_Exams.April2023Regular.robotService.entities.robot.Robot;
-import Java_OOP_Exams.April2023Regular.robotService.entities.services.Service;
-import Java_OOP_Exams.April2023Regular.robotService.entities.supplements.Supplement;
 import Java_OOP_Exams.April2023Regular.robotService.entities.robot.FemaleRobot;
 import Java_OOP_Exams.April2023Regular.robotService.entities.robot.MaleRobot;
-import Java_OOP_Exams.April2023Regular.robotService.entities.services.MainService;
-import Java_OOP_Exams.April2023Regular.robotService.entities.services.SecondaryService;
 import Java_OOP_Exams.April2023Regular.robotService.entities.supplements.MetalArmor;
 import Java_OOP_Exams.April2023Regular.robotService.entities.supplements.PlasticArmor;
 import Java_OOP_Exams.April2023Regular.robotService.repositories.SupplementRepository;
+import Java_OOP_Exams.April2023Regular.robotService.common.ConstantMessages;
+import Java_OOP_Exams.April2023Regular.robotService.common.ExceptionMessages;
+import Java_OOP_Exams.April2023Regular.robotService.entities.robot.Robot;
+import Java_OOP_Exams.April2023Regular.robotService.entities.services.MainService;
+import Java_OOP_Exams.April2023Regular.robotService.entities.services.SecondaryService;
+import Java_OOP_Exams.April2023Regular.robotService.entities.services.Service;
+import Java_OOP_Exams.April2023Regular.robotService.entities.supplements.Supplement;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public class ControllerImpl implements Controller{
+public class ControllerImpl implements Controller {
+
 
     private SupplementRepository supplementRepository;
     private Map<String, Service> services;
@@ -27,101 +27,100 @@ public class ControllerImpl implements Controller{
         this.services = new LinkedHashMap<>();
     }
 
+    @Override
     public String addService(String type, String name) {
         Service service;
-        switch (type){
+        switch (type) {
             case "MainService":
                 service = new MainService(name);
                 break;
             case "SecondaryService":
                 service = new SecondaryService(name);
                 break;
-            default:throw new NullPointerException(ExceptionMessages.INVALID_SERVICE_TYPE);
+            default:
+                throw new NullPointerException(ExceptionMessages.INVALID_SERVICE_TYPE);
         }
-        services.put(name, service);
+        this.services.put(name, service);
         return String.format(ConstantMessages.SUCCESSFULLY_ADDED_SERVICE_TYPE, type);
     }
 
-    public String addSupplement(String type){
+    @Override
+    public String addSupplement(String type) {
         Supplement supplement;
-        switch (type){
+        switch (type) {
             case "PlasticArmor":
                 supplement = new PlasticArmor();
                 break;
             case "MetalArmor":
                 supplement = new MetalArmor();
                 break;
-            default:throw new IllegalArgumentException(ExceptionMessages.INVALID_SUPPLEMENT_TYPE);
+            default:
+                throw new NullPointerException(ExceptionMessages.INVALID_SUPPLEMENT_TYPE);
         }
         this.supplementRepository.addSupplement(supplement);
-        return String.format(ConstantMessages.SUCCESSFULLY_ADDED_SUPPLEMENT_TYPE,type);
+        return String.format(ConstantMessages.SUCCESSFULLY_ADDED_SUPPLEMENT_TYPE, type);
     }
 
-    public String supplementForService(String serviceName, String supplementType){
-        Supplement supplementForService = this.supplementRepository.findFirst(supplementType);
-        if (supplementForService == null) {
+    @Override
+    public String supplementForService(String serviceName, String supplementType) {
+        Service service = this.services.get(serviceName);
+        Supplement supplement = this.supplementRepository.findFirst(supplementType);
+        if (supplement == null) {
             throw new IllegalArgumentException(String.format(ExceptionMessages.NO_SUPPLEMENT_FOUND, supplementType));
         }
-        Service service = this.services.get(serviceName);
-        service.addSupplement(supplementForService);
-        this.supplementRepository.removeSupplement(supplementForService);
-
+        service.addSupplement(supplement);
+        this.supplementRepository.removeSupplement(supplement);
         return String.format(ConstantMessages.SUCCESSFULLY_ADDED_SUPPLEMENT_IN_SERVICE, supplementType, serviceName);
     }
 
-    public String addRobot(String serviceName, String robotType, String robotName, String robotKind, double price){
+    @Override
+    public String addRobot(String serviceName, String robotType, String robotName, String robotKind, double price) {
         Robot robot;
-        switch (robotType){
-            case "FemaleRobot":
-                robot = new FemaleRobot(robotName,robotKind,price);
-                break;
+        switch (robotType) {
             case "MaleRobot":
-                robot = new MaleRobot(robotName,robotKind,price);
+                robot = new MaleRobot(robotName, robotKind, price);
                 break;
-            default:throw new IllegalArgumentException(ExceptionMessages.INVALID_ROBOT_TYPE);
+            case "FemaleRobot":
+                robot = new FemaleRobot(robotName, robotKind, price);
+                break;
+            default:
+                throw new IllegalArgumentException(ExceptionMessages.INVALID_ROBOT_TYPE);
         }
         Service service = this.services.get(serviceName);
-        String output;
 
-        if (!isSuitableService(robotType, service)) {
-            output = ConstantMessages.UNSUITABLE_SERVICE;
-        } else {
+        String serviceType = service.getClass().getSimpleName();
+
+        boolean isSuitable = serviceType.equals("MainService") && robotType.equals("MaleRobot") ||
+                serviceType.equals("SecondaryService") && robotType.equals("FemaleRobot");
+        if (!isSuitable) {
+            return String.format(ConstantMessages.UNSUITABLE_SERVICE);
+        } else{
             service.addRobot(robot);
-            output = String.format(ConstantMessages.SUCCESSFULLY_ADDED_ROBOT_IN_SERVICE, robotType, serviceName);
-        }
-
-        return output;
+        return String.format(ConstantMessages.SUCCESSFULLY_ADDED_ROBOT_IN_SERVICE, robotType, serviceName);
     }
 
-    private boolean isSuitableService(String robotType, Service service) {
-        String bankType = service.getClass().getSimpleName();
-
-        if (robotType.equals("FemaleRobot") && bankType.equals("SecondaryService")) {
-            return true;
-        } else if (robotType.equals("MaleRobot") && bankType.equals("MainService")) {
-            return true;
-        }
-
-        return false;
     }
 
-    public String feedingRobot(String serviceName){
+    @Override
+    public String feedingRobot(String serviceName) {
         Service service = this.services.get(serviceName);
         service.feeding();
-
         return String.format(ConstantMessages.FEEDING_ROBOT, service.getRobots().size());
     }
 
+    @Override
     public String sumOfAll(String serviceName) {
         Service service = this.services.get(serviceName);
-        double robotPrices = service.getRobots().stream()
+
+        double robotsPrice = service.getRobots().stream()
                 .mapToDouble(Robot::getPrice).sum();
-        double supplementPrices = service.getSupplements().stream()
+        double supplementsPrice = service.getSupplements().stream()
                 .mapToDouble(Supplement::getPrice).sum();
 
-        return String.format(ConstantMessages.VALUE_SERVICE, serviceName, robotPrices + supplementPrices);
+        return String.format(ConstantMessages.VALUE_SERVICE, serviceName, robotsPrice + supplementsPrice);
     }
 
+    @Override
     public String getStatistics() {
         return services.values()
                 .stream()

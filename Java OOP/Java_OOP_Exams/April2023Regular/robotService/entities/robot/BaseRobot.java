@@ -10,10 +10,10 @@ public abstract class BaseRobot implements Robot{
     private double price;
 
     public BaseRobot(String name, String kind, int kilograms, double price) {
-        this.name = name;
-        this.kind = kind;
-        this.kilograms = kilograms;
-        this.price = price;
+        this.setName(name);
+        this.setKind(kind);
+        this.setKilograms(kilograms);
+        this.setPrice(price);
     }
 
     @Override
@@ -23,7 +23,7 @@ public abstract class BaseRobot implements Robot{
 
     @Override
     public void setName(String name) {
-        if(name == null || name.trim().isEmpty()){
+        if(name == null || name.trim().isEmpty()) {
             throw new NullPointerException(ExceptionMessages.ROBOT_NAME_CANNOT_BE_NULL_OR_EMPTY);
         }
         this.name = name;
@@ -34,7 +34,7 @@ public abstract class BaseRobot implements Robot{
     }
 
     public void setKind(String kind) {
-        if(kind == null || kind.trim().isEmpty()){
+        if(kind == null || kind.trim().isEmpty()) {
             throw new NullPointerException(ExceptionMessages.ROBOT_KIND_CANNOT_BE_NULL_OR_EMPTY);
         }
         this.kind = kind;
@@ -62,5 +62,9 @@ public abstract class BaseRobot implements Robot{
     }
 
     @Override
-    abstract public void eating();
+    public void eating() {
+            int robotInitialKilograms = this.getClass().getSimpleName().equals("FemaleRobot") ?
+                    1 : 3;
+            this.setKilograms(this.kilograms + robotInitialKilograms);
+        }
 }

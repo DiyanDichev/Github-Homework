@@ -5,13 +5,10 @@ import Java_OOP_Exams.August2023Regular.bank.entities.loan.Loan;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class LoanRepository implements Repository {
+public class LoanRepository implements Repository{
 
-    private Collection<Loan> loans;
+    private Collection<Loan> loans = new ArrayList<>();
 
-    public LoanRepository() {
-        this.loans = new ArrayList<>();
-    }
 
     @Override
     public void addLoan(Loan loan) {
@@ -26,7 +23,7 @@ public class LoanRepository implements Repository {
     @Override
     public Loan findFirst(String type) {
         return this.loans.stream()
-                .filter(t -> t.getClass().getSimpleName().equals(type))
+                .filter(e -> e.getClass().getSimpleName().equals(type))
                 .findFirst()
                 .orElse(null);
     }

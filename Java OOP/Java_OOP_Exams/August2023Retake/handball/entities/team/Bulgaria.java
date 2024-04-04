@@ -6,7 +6,8 @@ public class Bulgaria extends BaseTeam{
         super(name, country, advantage);
     }
 
-    public void play(){
-        this.setAdvantage(getAdvantage() + 115);
+    @Override
+    public void play() {
+        this.setAdvantage(this.getAdvantage() + 115);
     }
 }

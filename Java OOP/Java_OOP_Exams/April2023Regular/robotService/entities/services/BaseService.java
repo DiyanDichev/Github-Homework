@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-public abstract class BaseService implements Service {
+public abstract class BaseService implements Service{
 
     private String name;
     private int capacity;
-    private Collection<Supplement> supplements;
-    private Collection<Robot> robots;
+    private Collection<Supplement>supplements;
+    private Collection<Robot>robots;
 
     public BaseService(String name, int capacity) {
-        this.name = name;
+        this.setName(name);
         this.capacity = capacity;
         this.supplements = new ArrayList<>();
         this.robots = new ArrayList<>();
@@ -30,74 +30,59 @@ public abstract class BaseService implements Service {
 
     @Override
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty()) {
+        if (name == null || name.trim().isEmpty()){
             throw new NullPointerException(ExceptionMessages.SERVICE_NAME_CANNOT_BE_NULL_OR_EMPTY);
         }
         this.name = name;
     }
 
-    public int getCapacity() {
-        return this.capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
+    @Override
+    public Collection<Robot> getRobots() {
+        return this.robots;
     }
 
     @Override
     public Collection<Supplement> getSupplements() {
-        return supplements;
-    }
-
-    public void setSupplements(Collection<Supplement> supplements) {
-        this.supplements = supplements;
+        return this.supplements;
     }
 
     @Override
-    public Collection<Robot> getRobots() {
-        return robots;
-    }
-
-    public void setRobots(Collection<Robot> robots) {
-        this.robots = robots;
-    }
-
     public void addRobot(Robot robot) {
-        if (this.getRobots().size() < this.capacity) {
-            this.robots.add(robot);
-            return;
+        if(capacity < this.robots.size()){
+            throw new IllegalArgumentException(ConstantMessages.NOT_ENOUGH_CAPACITY_FOR_ROBOT);
         }
-        throw new IllegalStateException(ConstantMessages.NOT_ENOUGH_CAPACITY_FOR_ROBOT);
+        this.robots.add(robot);
     }
 
+    @Override
     public void removeRobot(Robot robot) {
-        this.getRobots().remove(robot);
+        this.robots.remove(robot);
     }
 
+    @Override
     public void addSupplement(Supplement supplement) {
-        this.getSupplements().add(supplement);
+        this.supplements.add(supplement);
     }
 
+    @Override
     public void feeding() {
-        for (Robot robot : this.getRobots()) {
-            robot.eating();
-        }
+        this.robots.forEach(Robot::eating);
     }
 
+    @Override
     public int sumHardness() {
-        int sum = 0;
-        for (Supplement supplement : this.getSupplements()) {
-            sum += supplement.getHardness();
-        }
-        return sum;
+        int hardnessSum = this.supplements.stream()
+                .mapToInt(Supplement::getHardness)
+                .sum();
+        return hardnessSum;
     }
 
     @Override
     public String getStatistics() {
-        return String.format("%s %s:\n", this.name, this.getClass().getSimpleName())
-                + String.format("Robots: %s\n", getRobots().isEmpty()
+        return String.format("%s %s:\n",this.name, this.getClass().getSimpleName()) +
+                String.format("Robots: %s\n", getRobots().isEmpty()
                 ? "none"
-                : this.getRobots().stream().map(Robot::getName).collect(Collectors.joining(" ")).trim())
-                + String.format("Supplements: %s Hardness: %s\n", this.getSupplements().size(), this.sumHardness());
+                : this.getRobots().stream().map(Robot::getName).collect(Collectors.joining(" ")).trim()) +
+                String.format("Supplements: %s Hardness: %s\n",this.getSupplements().size(),this.sumHardness());
     }
 }

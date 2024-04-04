@@ -1,7 +1,6 @@
 package Java_OOP_Exams.August2023Regular.bank.entities.loan;
 
-public class BaseLoan implements Loan {
-
+public abstract class BaseLoan implements Loan{
     private int interestRate;
     private double amount;
 
@@ -12,11 +11,11 @@ public class BaseLoan implements Loan {
 
     @Override
     public int getInterestRate() {
-        return 0;
+        return this.interestRate;
     }
 
     @Override
     public double getAmount() {
-        return 0;
+        return this.amount;
     }
 }

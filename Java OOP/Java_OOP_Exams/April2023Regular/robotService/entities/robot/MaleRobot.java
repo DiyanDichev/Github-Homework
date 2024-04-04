@@ -7,7 +7,4 @@ public class MaleRobot extends BaseRobot{
         super(name, kind, INITIAL_KILOGRAMS, price);
     }
 
-    public void eating(){
-        this.setKilograms(this.getKilograms() + 3);
-    }
 }

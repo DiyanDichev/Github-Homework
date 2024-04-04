@@ -2,6 +2,7 @@ package Java_OOP_Exams.August2023Retake.handball.entities.equipment;
 
 public abstract class BaseEquipment implements Equipment{
 
+
     private int protection;
     private double price;
 
@@ -10,10 +11,13 @@ public abstract class BaseEquipment implements Equipment{
         this.price = price;
     }
 
-    public int getProtection(){
+    @Override
+    public int getProtection() {
         return this.protection;
     }
-    public double getPrice(){
+
+    @Override
+    public double getPrice() {
         return this.price;
     }
 }
