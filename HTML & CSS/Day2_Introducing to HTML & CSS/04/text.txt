@@ -1,0 +1,11 @@
+The Evolution of Web Design
+
+March 10, 2024 by Alex Johnson
+
+Web design has come a long way since the early days of the internet...
+
+Understanding CSS Grid
+
+March 15, 2024 by Sam Lee
+
+CSS Grid is a powerful layout system available in CSS...

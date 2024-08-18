@@ -1,0 +1,5 @@
+This is the header
+
+This is the main area of the site
+
+This is the footer.

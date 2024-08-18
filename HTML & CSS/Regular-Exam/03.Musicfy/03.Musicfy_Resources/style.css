@@ -1,0 +1,58 @@
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: black;
+        }
+        header img {
+            width:80px;
+            height: 70px;
+        }
+        header ul{
+            list-style: none;
+            display: flex;
+            gap: 1.5em;
+            alight-items: center;
+            padding: 10px 30px 0 0;
+        }
+        ul li a{
+            color: white;
+            text-decoration: none;
+        }
+        .dogopal {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        .dogopal h2{
+            flex: 1 0 100%;
+        }
+        h1 {
+            text-align: center;
+            background-color: #00FF7F;
+            height: 200px;
+        }
+        h3 {
+            font-size: 50px;
+            text-align: center;
+        }
+        .features {
+            text-align: center;
+        }
+        .price {
+            background-color: black;
+            color: white;
+        }
+        footer{
+            height: 50px;
+            background-color: black;
+            text-align: center;
+            color: white;
+        }
+        td{
+            height: 5px;
+            width: 400px;
+            border: 0;
+        }
+        td{
+        background-color: #A0A0A0;
+        }

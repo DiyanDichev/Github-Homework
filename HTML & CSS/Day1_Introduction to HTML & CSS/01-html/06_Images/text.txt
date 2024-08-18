@@ -1,0 +1,11 @@
+Images
+
+The img element embeds an image into the document.
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi distinctio asperiores accusamus dolorum dolores aliquam vero iusto velit? Illo quas beatae, soluta amet ea id repellat iure aspernatur recusandae nulla!
+
+Minus tenetur quod, dolor, hic ratione quidem quo accusamus quos vitae numquam asperiores, officiis incidunt aliquam. Sed modi quae reiciendis quam ratione?
+
+Sit quas dolorum vel ad fugiat nulla, esse at numquam libero reiciendis saepe rerum voluptatem? Inventore molestias natus esse, doloribus sint recusandae?
+
+Images next to each other

@@ -1,0 +1,33 @@
+My Simple Blog
+
+Home
+
+About
+
+Contact
+
+Blog Post Title
+
+January 1, 2024
+
+by
+
+Author Name
+
+This is a summary of the blog post...
+
+Read more...
+
+About Me
+
+Short bio or description about the blog author.
+
+Categories
+
+Web Design
+
+HTML
+
+CSS
+
+&copy; 2024 My Simple Blog. All rights reserved.

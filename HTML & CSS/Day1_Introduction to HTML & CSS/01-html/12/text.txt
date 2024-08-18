@@ -1,0 +1,18 @@
+The &lt;time&gt; Element Showcase
+
+Examples of the &lt;time&gt; Element
+
+Date Only (YYYY-MM-DD)
+The following is a date: January 1, 2023.
+
+Time Only (24-Hour Format)
+The following is a time: 13:45 (1:45 PM).
+
+Date and Time Combination
+The following is a date and time: January 1, 2023, at 13:45.
+
+Datetime with Timezone
+The following is a datetime with a timezone: January 1, 2023, at 13:45 UTC.
+
+Human-readable Date with Datetime Attribute
+The following is a human-readable date: New Year's Day 2023.

@@ -1,0 +1,21 @@
+This paragraph is a direct descendant of a section.
+
+This paragraph is within an article inside a section.
+
+This paragraph is within a highlighted article.
+
+This paragraph is in an article following a highlighted article.
+
+List Item 1
+List Item 2
+List Item 3
+List Item 4 with links:
+Link 1
+Link 2
+Link 3
+
+Siblings following this h2 are styled
+
+A sibling paragraph.
+
+Another sibling paragraph.

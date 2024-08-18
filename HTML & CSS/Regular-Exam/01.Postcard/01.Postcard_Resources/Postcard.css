@@ -1,0 +1,63 @@
+        body {
+            font-family: 'Gochi Hand', cursive;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .postcard {
+            background: white;
+            width: 900px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .container-message{
+            background-image: url(images/nature.jpg);
+            background-size: cover;
+            width: 92%;
+            height: 500px;
+            border-radius: 15px 15px 0 0;
+            padding: 1.6em 1em 1.6em;
+            display: flex;
+            align-items: flex-end;
+            margin: 0 auto;
+            margin-bottom: 25px;
+        }
+        .message {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            align-items: center;
+            width: 95%;
+        }
+        .message h1 {
+            font-size: 24px;
+            margin-top: 0;
+            text-align: center;
+            opacity: 80%;
+        }
+        .message p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .address {
+                background: #f9f9f9;
+                padding: 2em;
+        }
+        .address h2{
+            font-size: 21px;
+            margin-top: 0;
+            opacity: 80%;
+        }
+        .address p {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .hr {
+        padding: 20px 0px;
+        margin: 20px 0px;
+        }
